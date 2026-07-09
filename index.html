@@ -49,6 +49,77 @@ body::before{
     }
 }
 
+.titulo{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    transition: transform 0.3s ease;
+}
+
+header:hover .titulo{
+    transform: scale(1.05);
+}
+
+header{
+    background: linear-gradient(rgba(0,0,0,.6), rgba(0,0,0,.6)),
+                url("img/banner.jpg");
+    background-size: cover;
+    background-position: center;
+}
+    
+.titulo h1{
+    margin:0;
+    font-size:2rem;
+    font-weight:bold;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    text-shadow:2px 2px 8px rgba(0,0,0,.4);
+    transition:.3s;
+    animation:deslizar 1s ease;
+}
+
+@keyframes deslizar{
+
+    from{
+        opacity:0;
+        transform:translateX(-50px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateX(0);
+    }
+
+}
+
+.logo{
+    width:70px;
+    height:70px;
+    object-fit:cover;
+    transition:.3s;
+    animation:flotar 3s ease-in-out infinite;
+}   
+
+.titulo h1{
+    margin: 0;
+    transition: transform 0.3s ease;
+}
+
+header{
+    background:...
+}
+
+header{
+    padding:...
+}
+
+header{
+    animation:...
+}
+
+header{
+    position:fixed;
+}
 /* NAVBAR */
 
 header{
@@ -65,11 +136,63 @@ header{
     border-bottom:1px solid rgba(255,255,255,0.1);
 }
 
+header{
+    padding: 15px 30px;
+    background: linear-gradient(90deg, #1e3c72, #2a5298);
+    color: white;
+    box-shadow: 0 4px 15px rgba(0,0,0,.25);
+}
+
+header{
+    animation: aparecer 1s ease;
+}
+
+@keyframes aparecer{
+
+    from{
+        opacity:0;
+        transform:translateY(-30px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+header{
+    background: rgba(0,0,0,.65);
+    backdrop-filter: blur(10px);
+}
+
+header{
+    position: fixed;
+    width:100%;
+    top:0;
+    left:0;
+    z-index:1000;
+}
+
+
 .logo{
     font-family:'Orbitron', sans-serif;
     font-size:28px;
     color:#7a5cff;
     text-shadow:0 0 15px #7a5cff;
+}
+
+.logo{
+    animation: flotar 3s ease-in-out infinite;
+}
+
+@keyframes flotar{
+    0%,100%{
+        transform: translateY(0);
+    }
+
+    50%{
+        transform: translateY(-5px);
+    }
 }
 
 nav a{
@@ -84,7 +207,6 @@ nav a:hover{
     color:#7a5cff;
     text-shadow:0 0 10px #7a5cff;
 }
-
 /* HERO */
 
 .hero{
@@ -96,9 +218,24 @@ nav a:hover{
     padding:0 20px;
 }
 
-.hero-content{
-    max-width:900px;
-    animation:fadeIn 2s ease;
+.hero{
+    width:100%;
+    height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:0 20px;
+
+    background:
+    linear-gradient(rgba(0,0,0,.45), rgba(0,0,0,.45)),
+    url("img/banner.jpg");
+
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+
 }
 
 .hero h1{
@@ -139,6 +276,7 @@ nav a:hover{
     transform:translateY(-5px) scale(1.05);
     box-shadow:0 0 30px rgba(0,191,255,0.8);
 }
+
 
 /* SECCIONES */
 
@@ -185,8 +323,8 @@ section{
 
 .products{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(400px,5fr));
-    gap:40px;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:30px;
 }
 
 .product{
@@ -304,6 +442,97 @@ section{
     background:#d500f9;
 }
 
+.brown{
+    background:#795548;
+}
+
+.golden{
+    background:#ffc400;
+    color:#333;
+}
+
+.plate{
+    background:#9e9e9e;
+    color:#333;
+}
+
+/* VENTANA EMERGENTE */
+
+.modal{
+    display:none;
+    position:fixed;
+    z-index:99999;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,.8);
+    justify-content:center;
+    align-items:center;
+}
+#buscador{
+    width:280px;
+    padding:10px;
+    border:none;
+    border-radius:25px;
+}
+
+.modal-content{
+    background:#151525;
+    width:700px;
+    max-width:90%;
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 0 30px #7a5cff;
+    animation:aparecer .35s ease;
+}
+
+@keyframes aparecer{
+    from{
+        opacity:0;
+        transform:scale(.8);
+    }
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
+}
+
+.modal img{
+    width:100%;
+    height:320px;
+    object-fit:cover;
+}
+
+.modal-body{
+    padding:25px;
+}
+
+.modal-body h2{
+    color:#00bfff;
+    margin-bottom:15px;
+}
+
+.modal-body p{
+    margin-bottom:15px;
+    line-height:1.6;
+}
+
+.modal-price{
+    font-size:28px;
+    color:#7a5cff;
+    font-weight:bold;
+    margin-bottom:20px;
+}
+
+.close{
+    position:absolute;
+    right:25px;
+    top:15px;
+    font-size:40px;
+    color:white;
+    cursor:pointer;
+}
 
 
 
@@ -389,24 +618,99 @@ footer p{
 
 }
 
+/* BOTONES FLOTANTES */
+
+.social-buttons{
+    position:fixed;
+    right:20px;
+    bottom:20px;
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+    z-index:9999;
+}
+
+.social-buttons a{
+    width:60px;
+    height:60px;
+    border-radius:50%;
+    background:#111;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    box-shadow:0 0 20px rgba(0,191,255,.5);
+    transition:.3s;
+}
+
+.social-buttons a:hover{
+    transform:scale(1.1);
+}
+
+.social-buttons img{
+    width:35px;
+}
+
+
+
 </style>
 </head>
 
 <body>
 
+<div class="modal" id="modalJuego">
+
+    <div class="modal-content">
+
+        <span class="close" onclick="cerrarJuego()">&times;</span>
+
+        <img id="modalImagen">
+
+        <div class="modal-body">
+
+            <h2 id="modalTitulo"></h2>
+
+            <div id="modalEstrellas" style="font-size:22px;color:gold;margin:10px 0;">
+                ⭐⭐⭐⭐⭐
+            </div>
+
+            <p id="modalDescripcion"></p>
+
+            <p><strong>🎮 Plataforma:</strong> PC</p>
+
+            <p><strong>📦 Entrega:</strong> Instantánea</p>
+
+            <div class="modal-price" id="modalPrecio"></div>
+
+            <button class="buy-btn" id="modalComprar">
+                🛒 Agregar al carrito
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
 <!-- NAVBAR -->
 
 <header>
-
+    
     <div class="logo">NEXUS DIGITAL</div>
 
-    <nav>
-        <a href="#inicio">Inicio</a>
-        <a href="#productos">Tienda</a>
-        <a href="#valores">Valores</a>
-        <a href="#mision">Misión</a>
-        <a href="#vision">Visión</a>
-    </nav>
+<nav>
+    <input type="text" id="buscador" placeholder="Buscar juegos...">
+    <a href="#inicio">Inicio</a>
+    <a href="#productos">Tienda</a>
+    <a href="#valores">Valores</a>
+    <a href="#mision">Misión</a>
+    <a href="#vision">Visión</a>
+
+    <button class="btn"
+    onclick="verCarrito()">
+        🛒 Carrito
+    </button>
+
+</nav>
 
 </header>
 
@@ -435,13 +739,18 @@ footer p{
 
 <section id="productos">
 
-    <h2 class="section-title">Productos Destacados</h4>
+    <h2 class="section-title">Productos Destacados</h2>
 
     <div class="products">
 
         <!-- VALORANT -->
 
-        <div class="product">
+        <div class="product" onclick="abrirJuego(
+'Valorant Points',
+'Compra VP para skins, bundles y el pase de batalla.',
+9990,
+'img/Valorant.jpg'
+)">
 
             <span class="tag red">HOT</span>
 
@@ -455,17 +764,25 @@ footer p{
 
             <div class="price">$9.990 CLP</div>
 
-            <button class="buy-btn">Comprar</button>
+            <button class="buy-btn"
+onclick="event.stopPropagation(); comprar('Valorant Points',9990)">
+    Comprar
+</button>
 
         </div>
 
         <!-- SUBNAUTICA -->
 
-        <div class="product">
+        <div class="product" onclick="abrirJuego(
+'Subnautica 2',
+'Explora nuevos océanos alienígenas en la secuela más esperada.',
+1990,
+'img/subnautica2.jpg'
+)">
 
             <span class="tag green">NEW</span>
 
-            <img src="https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/1962700/header.jpg">
+            <img src="img/subnautica2.jpg">
 
             <h3>Subnautica 2</h3>
 
@@ -473,19 +790,24 @@ footer p{
                 Explora nuevos océanos alienígenas en la secuela más esperada.
             </p>
 
-            <div class="price">$34.990 CLP</div>
+            <div class="price">$1.990 CLP</div>
 
-            <button class="buy-btn">Comprar</button>
+            <button class="buy-btn"onclick="comprar('Subnautica 2',1990)">Comprar</button>
 
         </div>
 
         <!-- FORTNITE -->
 
-        <div class="product">
+        <div class="product" onclick="abrirJuego(
+'Fortnite V-Bucks',
+'Obtén skins, emotes y el pase de batalla de Fortnite.',
+12990,
+'img/Vbucks.jpg'
+)">
 
             <span class="tag orange">TOP</span>
 
-            <img src="https://cdn1.epicgames.com/offer/fn/FNECO_32-00_VbuckStoreArtUpdate_2800_EGS_2560x1440_2560x1440-eb1953342c1007d14b5c50113549ad83">
+            <img src="img/Vbucks.jpg">
 
             <h3>Fortnite V-Bucks</h3>
 
@@ -495,17 +817,22 @@ footer p{
 
             <div class="price">$12.990 CLP</div>
 
-            <button class="buy-btn">Comprar</button>
+            <button class="buy-btn"onclick="comprar('Fortnite V-Bucks',12990)">Comprar</button>
 
         </div>
 
         <!-- GTA -->
 
-        <div class="product">
+        <div class="product" onclick="abrirJuego(
+'GTA V Premium',
+'Incluye GTA Online, modo historia y contenido premium exclusivo.',
+8990,
+'img/gta-v.jpg'
+)">
 
             <span class="tag purple">PLUS</span>
 
-            <img src="https://cdn2.downdetector.com/static/uploads/logo/gta-v-logo-huge-transback1.png">
+            <img src="img/gta-v.jpg">
 
             <h3>GTA V Premium</h3>
 
@@ -513,19 +840,24 @@ footer p{
                 Incluye GTA Online y contenido premium exclusivo.
             </p>
 
-            <div class="price">$19.990 CLP</div>
+            <div class="price">$8.990 CLP</div>
 
-            <button class="buy-btn">Comprar</button>
+            <button class="buy-btn"onclick="comprar('GTA V Premium',8990)">Comprar</button>
 
         </div>
 
         <!-- ROBUX -->
 
-        <div class="product">
+        <div class="product" onclick="abrirJuego(
+'Robux',
+'Monedas oficiales de Roblox con entrega instantánea.',
+7990,
+'img/robux.jpg'
+)">
 
             <span class="tag yellow">POPULAR</span>
 
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIy276XDG_MP80O8oDezN1D4qGGdKGwN62mw&s">
+            <img src="img/robux.jpg">
 
             <h3>Robux</h3>
 
@@ -535,17 +867,22 @@ footer p{
 
             <div class="price">$7.990 CLP</div>
 
-            <button class="buy-btn">Comprar</button>
+            <button class="buy-btn"Onclick="comprar('Robux',7990)">Comprar</button>
 
         </div>
 
                 <!-- Subnautica -->
 
-        <div class="product">
+        <div class="product" onclick="abrirJuego(
+'Subnautica',
+'Explora nuevos océanos alienígenas en la secuela más esperada.',
+3990,
+'img/subnautica.jpg'
+)">
 
             <span class="tag ice">NEW</span>
 
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShgkgM4BGJDmXfWNzkMFGLWmUczT7VxzOVvg&s">
+            <img src="img/subnautica.jpg">
 
             <h3>Subnautica</h3>
 
@@ -553,20 +890,25 @@ footer p{
                 Explora nuevos océanos alienígenas en la secuela más esperada.
             </p>
 
-            <div class="price">$12.990 CLP</div>
+            <div class="price">$3.990 CLP</div>
 
-            <button class="buy-btn">Comprar</button>
+            <button class="buy-btn"Onclick="comprar('Subnautica',3990)">Comprar</button>
 
         </div>
 
                 <!-- Rainbow Six Siege -->
 
-        <div class="product">
+        <div class="product" onclick="abrirJuego(
+'Rainbow Six Siege R6 Credits',
+'El mejor shooter tactico de todos los tiempos',
+8990,
+'img/r6.jpg'
+)">
 
             <span class="tag esmerald">TOP</span>
 
 
-            <img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/359550/ac4f6daf0d8afee2754e9964077a9a7d5bdb8ab8/header_alt_assets_20.jpg?t=1775836354">
+            <img src="img/r6.jpg">
 
             <h3>Rainbow Six Siege R6 Credits
             </h3>
@@ -577,17 +919,22 @@ footer p{
 
             <div class="price">$8.990 CLP</div>
 
-            <button class="buy-btn">Comprar</button>
+            <button class="buy-btn"Onclick="comprar('Rainbow Six Siege R6 Credits',8990)">Comprar</button>
 
         </div>
 
         <!-- GAME PASS -->
 
-        <div class="product">
+        <div class="product" onclick="abrirJuego(
+'Xbox Game Pass',
+'Acceso a cientos de juegos en Xbox y PC.',
+8990,
+'img/xbox.jpg'
+)">
 
             <span class="tag burdle">PLUS</span>
 
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZQAORt6bjUZCw67_r2v4WTxDtjGZnWmv2Lg&s">
+            <img src="img/xbox.jpg">
 
             <h3>Xbox Game Pass</h3>
 
@@ -597,17 +944,22 @@ footer p{
 
             <div class="price">$8.990 CLP</div>
 
-            <button class="buy-btn">Comprar</button>
+            <button class="buy-btn"Onclick="comprar('Xbox Game Pass',8990)">Comprar</button>
 
         </div>
 
                 <!-- ISAAC -->
 
-        <div class="product">
+        <div class="product" onclick="abrirJuego(
+'Isaac',
+'Juego de dugneons y acción con una comunidad enorme y activa',
+2990,
+'img/isaac.jpg'
+)">
 
-            <span class="tag lightgreen">POPULAR</span>
+            <span class="tag lightgreen">Mind</span>
 
-            <img src="https://i.ytimg.com/vi/PXD1kIZr9iA/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLD6NzJ3mBhf7cHvDsN1fK5ozdFoVQ">
+            <img src="img/isaac.jpg">
 
             <h3>Isaac</h3>
 
@@ -615,29 +967,133 @@ footer p{
                 Juego de dugneons y acción con una comunidad enorme y activa
             </p>
 
-            <div class="price">$16.990 CLP</div>
+            <div class="price">$2.990 CLP</div>
 
-            <button class="buy-btn">Comprar</button>
+            <button class="buy-btn"Onclick="comprar('Isaac',2990)">Comprar</button>
 
         </div>
         
-                <!-- FIFA -->
+                <!-- GTA-6 -->
 
-        <div class="product">
+        <div class="product" onclick="abrirJuego(
+'GTA-6',
+'La revolucion de los juegos al mejor precio ',
+87990,
+'img/gta-6.jpg'
+)">
 
-            <span class="tag pink">Popular</span>
+            <span class="tag golden">Most Popular</span>
 
-            <img src="https://static.wikia.nocookie.net/revenge-history/images/6/62/Fifa-logo.jpg/revision/latest?cb=20181028155036&path-prefix=es">
+            <img src="img/gta-6.jpg">
 
-            <h3>Fifa Points</h3>
+            <h3>GTA-6</h3>
 
             <p>
-               Fifa points al mejor precio para tus sobres y ultimate team
+               La revolucion de los juegos al mejor precio 
             </p>
 
-            <div class="price">$24.990 CLP</div>
+            <div class="price">$87.990 CLP</div>
 
-            <button class="buy-btn">Comprar</button>
+            <button class="buy-btn"Onclick="comprar('GTA-6',87990)">Comprar</button>
+
+        </div>
+
+                    <!-- MINECRAFT -->
+
+        <div class="product" onclick="abrirJuego(
+'Minecraft',
+'Juego de construcción y aventura con una comunidad enorme y activa. 2 en 1',
+23990,
+'img/minecraft.jpg'
+)">
+
+            <span class="tag lightgreen">Mega Ofert</span>
+
+            <img src="img/minecraft.jpg">
+
+            <h3>Minecraft</h3>
+
+            <p>
+                Juego de construcción y aventura con una comunidad enorme y activa. 2 en 1
+            </p>
+
+            <div class="price">$23.990 CLP</div>
+
+            <button class="buy-btn"Onclick="comprar('Minecraft',23990)">Comprar</button>
+
+        </div>
+     
+             <!-- The Forest -->
+
+        <div class="product" onclick="abrirJuego(
+'The Forest',
+'The Forest es un juego de supervivencia en un entorno selvático con elementos de horror.',
+4990,
+'img/fortes.jpg'
+)">
+
+            <span class="tag brown">Excase</span>
+
+            <img src="img/fortes.jpg">
+
+            <h3>The Forest</h3>
+
+            <p>
+               The Forest es un juego de supervivencia en un entorno selvático con elementos de horror.
+            </p>
+
+            <div class="price">$4.990 CLP</div>
+
+            <button class="buy-btn"onclick="comprar('The Forest',4990)">Comprar
+</button>
+
+        </div>
+                     <!-- Sons of the forest -->
+
+        <div class="product" onclick="abrirJuego(
+'Sons of the forest',
+'Sons of the forest es un juego de supervivencia en un entorno selvático con elementos de horror.',
+11990,
+'img/sons.jpg'
+)">
+
+            <span class="tag plate">Good</span>
+
+            <img src="img/sons.jpg">
+
+            <h3>Sons of the forest</h3>
+
+            <p>
+               Sons of the forest es un juego de supervivencia en un entorno selvático con elementos de horror. 
+            </p>
+
+            <div class="price">$11.990 CLP</div>
+
+            <button class="buy-btn"Onclick="comprar('Sons of the forest',11990)">Comprar</button>
+
+        </div>
+                     <!-- Resident Evil 4 Remake -->
+
+        <div class="product" onclick="abrirJuego(
+'Resident Evil 4 Remake',
+'Resident Evil 4 Remake es un remake del clásico juego de survival horror.',
+19990,
+'img/re4.jpg'
+)">
+
+            <span class="tag golden">Fabulous</span>
+
+            <img src="img/re4.jpg">
+
+            <h3>Resident Evil 4 Remake</h3>
+
+            <p>
+               Resident Evil 4 Remake es un remake del clásico juego de survival horror.
+            </p>
+
+            <div class="price">$19.990 CLP</div>
+
+            <button class="buy-btn"Onclick="comprar('Resident Evil 4 Remake',19990)">Comprar</button>
 
         </div>
     </div>
@@ -758,7 +1214,7 @@ footer p{
 
 </footer>
 
-<!-- SCRIPT -->
+<!-- SCRIPT --> 
 
 <script>
 
@@ -772,7 +1228,7 @@ window.addEventListener('scroll', ()=>{
 
         if(top < window.innerHeight - 100){
             card.style.opacity = "1";
-            card.style.transform = "translateY(40px)";
+            card.style.transform = "translateY(0)";
         }
 
     });
@@ -787,28 +1243,111 @@ cards.forEach(card=>{
 
 });
 
+let carrito = [];
+
+function comprar(nombre, precio){
+
+    carrito.push({
+        nombre,
+        precio
+    });
+
+    alert(nombre + " fue agregado al carrito.");
+
+}
+
+function verCarrito(){
+
+    let mensaje = "🛒 CARRITO\n\n";
+    let total = 0;
+
+    carrito.forEach(producto=>{
+
+        mensaje += producto.nombre + " - $" + producto.precio + "\n";
+        total += producto.precio;
+
+    });
+
+    mensaje += "\nTOTAL: $" + total;
+
+    alert(mensaje);
+
+}
+
+function abrirJuego(nombre, descripcion, precio, imagen){
+
+    document.getElementById("modalTitulo").innerText = nombre;
+    document.getElementById("modalDescripcion").innerText = descripcion;
+    document.getElementById("modalPrecio").innerText = "$" + precio + " CLP";
+    document.getElementById("modalImagen").src = imagen;
+
+   document.getElementById("modalComprar").onclick = function(){
+
+    comprar(nombre, precio);
+
+    cerrarJuego();
+
+};
+
+    document.getElementById("modalJuego").style.display = "flex";
+
+}
+
+function cerrarJuego(){
+
+    document.getElementById("modalJuego").style.display = "none";
+
+}
+
+window.onclick = function(event){
+
+    const modal = document.getElementById("modalJuego");
+
+    if(event.target === modal){
+
+        cerrarJuego();
+
+    }
+
+}
+// BUSCADOR
+
+const buscador = document.getElementById("buscador");
+const productos = document.querySelectorAll(".product");
+
+buscador.addEventListener("input", function () {
+
+    const texto = buscador.value.toLowerCase();
+
+    productos.forEach(producto => {
+
+        const nombre = producto.querySelector("h3").textContent.toLowerCase();
+        const descripcion = producto.querySelector("p").textContent.toLowerCase();
+
+        if (nombre.includes(texto) || descripcion.includes(texto)) {
+            producto.style.display = "";
+        } else {
+            producto.style.display = "none";
+        }
+
+    });
+
+});
+
 </script>
 </section>
 
-<!--BOTON INSTAGRAM-->
-<a class="Instagram"
-href="https://www.instagram.com/"
-target="_blank">
+<div class="social-buttons">
 
-    <img src="https://cdn-icons-png.flaticon.com/512/733/733558.png"
-         width="45"
-         alt="Instagram">
+    <a href="https://www.instagram.com/" target="_blank">
+        <img src="https://cdn-icons-png.flaticon.com/512/733/733558.png">
+    </a>
 
-<!-- BOTÓN WHATSAPP -->
+    <a href="https://wa.me/56912345678" target="_blank">
+        <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png">
+    </a>
 
-<a class="WhatsApp"
-href="https://wa.me/56912345678"
-target="_blank">
-
-    <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png"
-         width="45"
-         alt="WhatsApp">
-</a>
+</div>
 
 </body>
 </html>
